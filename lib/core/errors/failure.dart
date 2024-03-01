@@ -1,0 +1,16 @@
+import 'package:equatable/equatable.dart';
+
+abstract class Failure extends Equatable{
+  const Failure({required this.message, required this.statusCode});
+
+  final String message;
+  final String statusCode;
+
+  @override
+  // two failures will be considered same if they have same message and statusCode
+  List<Object> get props => [message, statusCode];
+}
+
+class ApiFailure extends Failure {
+  const ApiFailure({required super.message, required super.statusCode});
+}
