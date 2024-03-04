@@ -8,6 +8,8 @@ class User extends Equatable {
     required this.avatar,
   });
 
+  const User.empty() : this(name: 'name', avatar: 'avatar', createdAt: 'createdAt', id: 1);
+
   final int id;
   final String createdAt;
   final String name;
