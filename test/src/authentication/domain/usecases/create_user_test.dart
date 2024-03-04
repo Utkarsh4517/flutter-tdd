@@ -3,17 +3,16 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:tddmockapi/core/errors/failure.dart';
 import 'package:tddmockapi/src/authentication/repositories/authentication_repository.dart';
+import 'package:tddmockapi/src/authentication/usecases/authentication_repository.mock.dart';
 import 'package:tddmockapi/src/authentication/usecases/create_user.dart';
 
-class MockAuthenticationRepository extends Mock
-    implements AuthenticationRepository {}
 
 void main() {
   late CreateUser useCase;
   late AuthenticationRepository repository;
 
   setUp(() {
-    repository = MockAuthenticationRepository();
+    repository = MocKAuthenticationRepository();
 
     useCase = CreateUser(repository);
   });
